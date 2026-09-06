@@ -1,2 +1,2 @@
-// Stays alive so systemd reports the service active, but never binds a port.
-setInterval(function () {}, 1000);
+const http = require('http');
+http.createServer(function (req, res) { res.end('ok'); }).listen(process.env.PORT || 3000, '127.0.0.1');
